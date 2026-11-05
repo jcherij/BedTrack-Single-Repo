@@ -60,7 +60,7 @@ resource "aws_lambda_event_source_mapping" "sqs_trigger" {
 
 resource "aws_lambda_function" "isolated_processor" {
   function_name = "isolated_processor"
-  role          = aws_iam_role.bedtrack_lambda.arn
+  role          = aws_iam_role.isolated_processor_role.arn
   handler       = "index.handler"
   runtime       = "python3.9"
   filename      = "payload.zip"
